@@ -73,7 +73,9 @@ export default function App() {
         <Footer />
 
         {/* Floating Chat Button */}
-        <motion.button
+        <motion.a
+          href="https://wa.me/639163372900"
+          target="_blank"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}
@@ -81,7 +83,7 @@ export default function App() {
           className="fixed bottom-8 right-8 z-[100] bg-brand-green text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-brand-green/90 transition-colors"
         >
           <MessageCircle size={24} />
-        </motion.button>
+        </motion.a>
       </div>
     </Router>
   );

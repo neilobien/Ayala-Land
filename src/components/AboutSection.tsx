@@ -30,10 +30,7 @@ export default function AboutSection() {
             <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">Expertise in Luxury <span className="italic font-serif">Portfolio Management</span>.</h2>
             
             <p className="text-lg text-brand-dark/70 font-light mb-8 leading-relaxed">
-              Neil Kenneth Obien is a licensed real estate broker under Ayala Land International Sales, 
-              specializing in premium and investment-grade properties across the Philippines. 
-              With a focus on long-term value and strategic growth, he provides end-to-end support for 
-              both local and international clients.
+              Neil Kenneth Obien is a licensed real estate broker under Ayala Land International Sales, specializing in premium and investment-grade properties. He provides expert guidance to investors, OFWs, and professionals looking to secure strategic assets in the Philippines' most prime locations.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-10">

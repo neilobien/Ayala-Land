@@ -1,5 +1,14 @@
 import { Property, Location } from './types';
 
+export const BROKER_INFO = {
+  name: 'Neil Kenneth Obien',
+  title: 'Licensed Real Estate Broker',
+  company: 'Ayala Land International Sales Inc.',
+  mobile: '+639163372900',
+  email: 'obien.neil@ayalaland-intl.com',
+  leads: ['obien.neil@ayalaland-intl.com', 'nikobien14@yahoo.com']
+};
+
 export const PROPERTIES: Property[] = [
   {
     id: '1',

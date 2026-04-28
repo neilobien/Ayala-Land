@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -38,15 +38,24 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4">
             <motion.button
               whileHover={{ x: 5 }}
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
               className="bg-white text-brand-dark px-8 py-4 rounded-full font-medium flex items-center gap-3"
             >
               Browse Properties <ArrowRight size={18} />
             </motion.button>
-            <motion.button
+            <motion.a
+              href="tel:+639163372900"
               whileHover={{ scale: 1.02 }}
               className="bg-transparent border border-white/30 text-white px-8 py-4 rounded-full font-medium backdrop-blur-sm flex items-center gap-3 hover:bg-white/10 transition-colors"
             >
-              Talk to a Broker <MessageCircle size={18} />
+              <Phone size={18} /> Call +63 916 337 2900
+            </motion.a>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-brand-green text-white px-8 py-4 rounded-full font-medium flex items-center gap-3 hover:bg-brand-green/90 transition-colors"
+            >
+               Send Inquiry
             </motion.button>
           </div>
         </motion.div>
