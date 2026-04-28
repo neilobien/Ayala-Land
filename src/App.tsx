@@ -7,8 +7,8 @@ import FeaturedGrid from './components/FeaturedGrid';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import FloatingContact from './components/FloatingContact';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageCircle } from 'lucide-react';
 
 function HomePage() {
   return (
@@ -21,21 +21,27 @@ function HomePage() {
       <FilterSection />
       
       {/* Property Listings Grid */}
-      <FeaturedGrid 
-        title="Featured Properties." 
-        subtitle="Exclusive Collections" 
-      />
+      <div id="properties">
+        <FeaturedGrid 
+          title="Featured Properties." 
+          subtitle="Exclusive Collections" 
+        />
+      </div>
 
-      <LocationSection />
+      <div id="location">
+        <LocationSection />
+      </div>
 
       {/* Categories Sections */}
-      <FeaturedGrid 
-        title="Condominiums." 
-        subtitle="Urban Masterpieces" 
-        category="Condominium"
-      />
+      <div id="condominiums">
+        <FeaturedGrid 
+          title="Condominiums." 
+          subtitle="Urban Masterpieces" 
+          category="Condominium"
+        />
+      </div>
       
-      <div className="bg-brand-beige/20">
+      <div id="lots" className="bg-brand-beige/20">
         <FeaturedGrid 
           title="Residential Lots." 
           subtitle="Prime Foundations" 
@@ -43,11 +49,13 @@ function HomePage() {
         />
       </div>
 
-      <FeaturedGrid 
-        title="House and Lot." 
-        subtitle="Move-In Ready" 
-        category="House and Lot"
-      />
+      <div id="house-and-lot">
+        <FeaturedGrid 
+          title="House and Lot." 
+          subtitle="Move-In Ready" 
+          category="House and Lot"
+        />
+      </div>
 
       <AboutSection />
       <ContactSection />
@@ -65,25 +73,12 @@ export default function App() {
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              {/* Other routes can be added here */}
             </Routes>
           </AnimatePresence>
         </main>
 
         <Footer />
-
-        {/* Floating Chat Button */}
-        <motion.a
-          href="https://wa.me/639163372900"
-          target="_blank"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="fixed bottom-8 right-8 z-[100] bg-brand-green text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-brand-green/90 transition-colors"
-        >
-          <MessageCircle size={24} />
-        </motion.a>
+        <FloatingContact />
       </div>
     </Router>
   );

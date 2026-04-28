@@ -1,6 +1,7 @@
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
+import nodemailer from 'nodemailer';
 
 async function startServer() {
   const app = express();
@@ -8,25 +9,51 @@ async function startServer() {
 
   app.use(express.json());
 
-  // API Route for Leads
-  app.post('/api/contact', async (req, res) => {
+  // API Routes
+  app.post('/api/leads', async (req, res) => {
     const { fullName, email, phone, budget, location, propertyType, message } = req.body;
-    
-    console.log('--- NEW WEBSITE LEAD ---');
-    console.log(`From: ${fullName} <${email}>`);
-    console.log(`Phone: ${phone}`);
-    console.log(`Preferred: ${propertyType} in ${location}`);
-    console.log(`Budget: ${budget}`);
-    console.log(`Message: ${message}`);
-    console.log('------------------------');
 
-    // NOTE: To send actual emails, you would use a service like Resend, SendGrid, or Nodemailer.
-    // Since this requires an API key, we simulate a successful delivery here.
-    // If you add an API key to the Secrets panel, you can implement the real mailer here.
+    // IMPORTANT: In a real production app, you would use environment variables for SMTP credentials.
+    // Since we are in a dev environment, we'll log the lead and simulate success.
+    console.log('New Lead Received:', { fullName, email, phone, budget, location, propertyType, message });
 
-    res.status(200).json({ message: 'Lead received successfully' });
+    try {
+      // Example Nodemailer setup (requires real SMTP credentials to work)
+      /*
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      const mailOptions = {
+        from: 'Real Estate Leads <no-reply@ayalaland-intl.com>',
+        to: 'obien.neil@ayalaland-intl.com, nikobien14@yahoo.com',
+        subject: 'New Website Lead – Property Inquiry',
+        text: `
+          New Inquiry from: ${fullName}
+          Email: ${email}
+          Phone: ${phone}
+          Budget: ${budget}
+          Preferred Location: ${location}
+          Property Type: ${propertyType}
+          Message: ${message}
+        `,
+      };
+
+      await transporter.sendMail(mailOptions);
+      */
+
+      res.status(200).json({ status: 'success', message: 'Lead received and processed.' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).json({ status: 'error', message: 'Failed to process lead.' });
+    }
   });
 
+  // Vite middleware for development
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
       server: { middlewareMode: true },

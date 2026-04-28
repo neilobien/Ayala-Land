@@ -1,20 +1,31 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Instagram, Facebook, Linkedin, MessageCircle, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-brand-dark text-white pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-20 border-b border-white/10">
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <div className="flex flex-col mb-8">
               <span className="text-xl font-bold font-display uppercase tracking-wider">Neil Kenneth Obien</span>
               <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-brand-beige/60 -mt-1">Licensed Real Estate Broker</span>
             </div>
-            <p className="text-white/50 text-sm font-light leading-relaxed mb-8">
-              Expert property advisor specializing in premium Ayala Land developments. Committed to helping clients build legacy through strategic real estate investments.
+            <p className="text-white/50 text-sm font-light leading-relaxed mb-8 max-w-md">
+              Associate Regional Manager at Ayala Land International Sales. Fortune 500 awardee specialized in high-growth property investments in the Philippines.
             </p>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3 text-white/60 text-sm font-light">
+                <Mail size={16} /> <a href="mailto:obien.neil@ayalaland-intl.com" className="hover:text-white transition-colors">obien.neil@ayalaland-intl.com</a>
+              </div>
+              <div className="flex items-center gap-3 text-white/60 text-sm font-light">
+                <Phone size={16} /> <a href="tel:+639163372900" className="hover:text-white transition-colors">+63 916 337 2900</a>
+              </div>
+              <div className="flex items-center gap-3 text-white/60 text-sm font-light">
+                <MapPin size={16} /> <span>23F 6750 Office Tower, Ayala Avenue, Makati City</span>
+              </div>
+            </div>
             <div className="flex gap-4">
               <SocialLink icon={<Facebook size={18} />} />
               <SocialLink icon={<Instagram size={18} />} />
@@ -24,24 +35,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest mb-8 text-brand-beige">Browse Properties</h4>
+            <h4 className="font-display font-bold text-xs uppercase tracking-widest mb-8 text-brand-beige">Services</h4>
             <ul className="space-y-4">
-              <FooterLink label="Investment Condos" />
-              <FooterLink label="Luxury Residential Lots" />
-              <FooterLink label="Prime House & Lot" />
-              <FooterLink label="Pre-selling Projects" />
-              <FooterLink label="Ready for Occupancy" />
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest mb-8 text-brand-beige">Locations</h4>
-            <ul className="space-y-4">
-              <FooterLink label="Makati City" />
-              <FooterLink label="Bonifacio Global City" />
-              <FooterLink label="Arca South" />
-              <FooterLink label="Nuvali Estates" />
-              <FooterLink label="Vermosa Cavite" />
+              <FooterLink label="Property Advisory" />
+              <FooterLink label="Portfolio Management" />
+              <FooterLink label="Strategic Investments" />
+              <FooterLink label="International Sales" />
             </ul>
           </div>
 
@@ -56,7 +55,7 @@ export default function Footer() {
                 placeholder="Email Address" 
                 className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand-beige transition-all"
               />
-              <button className="absolute right-2 top-1.5 bg-brand-beige text-brand-dark p-1.5 rounded-full hover:bg-white transition-colors">
+              <button className="absolute right-2 top-1.5 bg-white text-brand-dark p-1.5 rounded-full hover:bg-brand-beige transition-colors">
                 <ArrowRight size={16} />
               </button>
             </div>

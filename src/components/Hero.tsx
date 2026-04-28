@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -31,14 +31,14 @@ export default function Hero() {
             <span className="italic font-serif text-brand-beige">Strategic</span> Investments.
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 font-light leading-relaxed">
-            Exclusive access to Ayala Land developments across the Philippines. 
-            Tailored property advisory for the discerning investor.
+            Licensed Real Estate Broker and Associate Regional Manager at Ayala Land International Sales. 
+            A Fortune 500 awardee helping investors secure prime, high-growth properties.
           </p>
 
           <div className="flex flex-wrap gap-4">
             <motion.button
               whileHover={{ x: 5 }}
-              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+              onClick={() => document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-brand-dark px-8 py-4 rounded-full font-medium flex items-center gap-3"
             >
               Browse Properties <ArrowRight size={18} />
@@ -48,14 +48,14 @@ export default function Hero() {
               whileHover={{ scale: 1.02 }}
               className="bg-transparent border border-white/30 text-white px-8 py-4 rounded-full font-medium backdrop-blur-sm flex items-center gap-3 hover:bg-white/10 transition-colors"
             >
-              <Phone size={18} /> Call +63 916 337 2900
+              Call +639163372900
             </motion.a>
             <motion.button
               whileHover={{ scale: 1.02 }}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-brand-green text-white px-8 py-4 rounded-full font-medium flex items-center gap-3 hover:bg-brand-green/90 transition-colors"
             >
-               Send Inquiry
+              Send Inquiry
             </motion.button>
           </div>
         </motion.div>

@@ -15,7 +15,7 @@ export default function AboutSection() {
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
+                src="https://i.postimg.cc/XJxGM1Wn/1769246129478.jpg"
                 alt="Neil Kenneth Obien"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -30,7 +30,10 @@ export default function AboutSection() {
             <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">Expertise in Luxury <span className="italic font-serif">Portfolio Management</span>.</h2>
             
             <p className="text-lg text-brand-dark/70 font-light mb-8 leading-relaxed">
-              Neil Kenneth Obien is a licensed real estate broker under Ayala Land International Sales, specializing in premium and investment-grade properties. He provides expert guidance to investors, OFWs, and professionals looking to secure strategic assets in the Philippines' most prime locations.
+              Neil Kenneth Obien is a licensed real estate broker under Ayala Land International Sales, 
+              specializing in premium and investment-grade properties across the Philippines. 
+              With a focus on long-term value and strategic growth, he provides end-to-end support for 
+              both local and international clients.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-10">
